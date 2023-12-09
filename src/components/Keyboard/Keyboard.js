@@ -6,7 +6,7 @@ const FIRST_LINE = 'qwertyuiop'.toUpperCase().split("");
 const SECOND_LINE = 'asdfghjkl'.toUpperCase().split("");
 const THIRD_LINE = 'zxcvbnm'.toUpperCase().split("");
 const ALL_LETTERS = FIRST_LINE.concat(SECOND_LINE, THIRD_LINE)
-const STATUS_RANKING = {'': 1, misplaced: 2, incorrect: 3, correct: 4};
+const STATUS_RANKING = {'': 1, incorrect: 2, misplaced: 3, correct: 4};
 
 function Keyboard({currentGuess, setCurrentGuess, guesses, answer}) {
     const allLettersWithStatus = ALL_LETTERS.reduce((acc, letter) => (
