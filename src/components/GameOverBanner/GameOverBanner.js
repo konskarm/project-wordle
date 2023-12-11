@@ -1,6 +1,7 @@
 import React from 'react';
+import RestartSVG from '../../assets/restart.svg';
 
-function GameOverBanner({outcome, totalGuesses, answer}) {
+function GameOverBanner({outcome, totalGuesses, answer, restartGame}) {
     if (!['win', 'lose'].includes(outcome)) {
         return undefined;
     }
@@ -9,9 +10,12 @@ function GameOverBanner({outcome, totalGuesses, answer}) {
     return (
         <div className={className}>
             {outcome === 'win' ?
-                <p><strong>Congratulations!</strong> Got it in <strong>{totalGuesses} guesses</strong></p> :
-                <p>Sorry, the correct answer is <strong>{answer}</strong></p>
+                <><strong>Congratulations!</strong> Got it in <strong>{totalGuesses} guesses</strong></> :
+                <>Sorry, the correct answer is <strong>{answer}</strong></>
             }
+            <button onClick={restartGame}>
+                <img src={RestartSVG} alt="Restart Game"/>
+            </button>
         </div>
     );
 }

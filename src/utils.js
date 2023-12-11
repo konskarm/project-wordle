@@ -1,3 +1,16 @@
+import {WORDS} from "./data";
+
+export const sampleAnswer = (previousAnswer) => {
+    let nextAnswer = sample((WORDS));
+    while (nextAnswer === previousAnswer) {
+        nextAnswer = sample(WORDS);
+    }
+
+    // To make debugging easier, we'll log the solution in the console.
+    console.log({answer: nextAnswer});
+    return nextAnswer;
+}
+
 export const sample = (arr) => {
     return arr[Math.floor(Math.random() * arr.length)];
 };
